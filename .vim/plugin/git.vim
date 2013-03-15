@@ -138,6 +138,7 @@ function! GitDiff(args)
     setlocal filetype=git-diff
     let w:foobar = 'GitAdd ' . join(files)
     nnoremap <buffer> a :exe w:foobar<CR>:GitStatus<CR>
+    nnoremap <buffer> s :GitStatus<CR>
 endfunction
 
 function! CompleteGitDiffCmd(arg_lead, cmd_line, cursor_pos)

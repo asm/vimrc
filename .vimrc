@@ -62,9 +62,21 @@ let g:CommandTAcceptSelectionTabMap='<CR>'
 map <leader>gb :Gblame<CR>
 autocmd QuickFixCmdPost *grep* cwindow
 
-" tab nav
+" Tab nav
 map <S-h> :tabp<CR>
 map <S-l> :tabn<CR>
+
+" Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
+let s:windowmapnr = 0
+let s:wins='1234567890!@#$%^&*()'
+while (s:windowmapnr < strlen(s:wins))
+  exe 'noremap <silent> <D-' . s:wins[s:windowmapnr] . '> ' . (s:windowmapnr + 1) . 'gt'
+  exe 'inoremap <silent> <D-' . s:wins[s:windowmapnr] . '> <C-O>' . (s:windowmapnr + 1) . 'gt'
+  exe 'cnoremap <silent> <D-' . s:wins[s:windowmapnr] . '> <C-C>' . (s:windowmapnr + 1) . 'gt'
+  exe 'vnoremap <silent> <D-' . s:wins[s:windowmapnr] . '> <C-C>' . (s:windowmapnr + 1) . 'gt'
+  let s:windowmapnr += 1
+endwhile
+unlet s:windowmapnr s:wins
 
 " Allow backspace to erase stuff
 " set backspace+=indent,eol,start 
@@ -78,7 +90,9 @@ cnoremap <Tab> <C-L><C-D>
 
 call pathogen#infect()
 
-" Folding
-set nofoldenable
-
-
+" Folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+map zz za
