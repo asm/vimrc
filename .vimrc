@@ -1,4 +1,10 @@
+execute pathogen#infect()
 syn on
+filetype plugin indent on
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+
+
 set autoindent
 "set smartindent
 
@@ -88,7 +94,6 @@ map <leader>wq :wq<CR>
 
 cnoremap <Tab> <C-L><C-D>
 
-call pathogen#infect()
 
 " Folding settings
 set foldmethod=indent   "fold based on indent
