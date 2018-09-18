@@ -1,7 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/jason/src/vimrc/.vim/bundle/vim-gitgutter'
-let g:netrw_dirhist_2='/Users/jason/newrelic/android_agent/eclipse/autobuild'
-let g:netrw_dirhist_3='/Users/jason/newrelic/android_agent/agent-core/build'
-let g:netrw_dirhist_4='/Users/jason/src/head'
-let g:netrw_dirhist_5='/Users/jason/Downloads/FT800_SampleApp_1.0'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/jason/Downloads/FTDI_V1.4.0_03272015(FT800)/libraries/FT_GC/FT_Transport_SPI'

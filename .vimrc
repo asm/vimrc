@@ -3,6 +3,10 @@ syn on
 filetype plugin indent on
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
+"set guifont=Sauce\ Code\ Powerline:h12
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 
 set autoindent
@@ -101,3 +105,5 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 map zz za
+
+com! FormatJSON %!python -m json.tool
